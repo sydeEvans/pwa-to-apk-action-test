@@ -8,14 +8,15 @@ jobs:
     steps:
       - name: Setup
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-          export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-          nvm i 18
-
-      - name: Install
-        run: |
+          apt update
+          apt -y install curl gnupg wget unzip
+          curl -sL https://deb.nodesource.com/setup_18.x  | bash -
+          apt -y install nodejs
+          npm i -g npm
           npm i -g @bubblewrap/cli
+
+      - name: Build
+        run: |
           ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | bubblewrap init --manifest=https://note.223324.xyz:8888/site.webmanifest
           ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | bubblewrap build
           cp ./*.apk ..
