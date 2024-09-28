@@ -22,11 +22,11 @@ plugins {
 }
 
 def twaManifest = [
-    applicationId: 'io.github.sharadcodes.twa',
-    hostName: 'sharadcodes.github.io', // The domain being opened in the TWA.
+    applicationId: 'io.github.evans.twa',
+    hostName: 'https://note.223324.xyz:8888', // The domain being opened in the TWA.
     launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
-    name: 'sharadcodes', // The application name.
-    launcherName: 'sharadcodes', // The name shown on the Android Launcher.
+    name: 'flatnote', // The application name.
+    launcherName: 'flatnote', // The name shown on the Android Launcher.
     themeColor: '#151618', // The color used for the status bar.
     navigationColor: '#000000', // The color used for the navigation bar.
     navigationColorDark: '#000000', // The color used for the dark navbar.
