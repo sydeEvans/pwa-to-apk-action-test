@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v2
         # Running PWA to apk action for apk generation
       - name: Running PWA to APK action
-        uses: sadofriod/pwa-to-apk-action-node-18@version2
+        uses: sharadcodes/pwa-to-apk-action@v1.0.0
         with:
           project-root-folder: "."
         # This one below is a seperate action which I'm using for releasing apk
